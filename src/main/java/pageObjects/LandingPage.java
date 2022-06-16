@@ -10,6 +10,8 @@ public class LandingPage {
 
     By signin= By.xpath("//a[@href='https://rahulshettyacademy.com/sign_in/']");
     By clsPopUp= By.xpath("//button[normalize-space()='NO THANKS']");
+    By pgHdr = By.cssSelector("div[class='text-center'] h2");
+    By nvBr = By.cssSelector(".nav.navbar-nav.navbar-right");
     
     public LandingPage(WebDriver driver) {
         this.driver = driver;
@@ -21,5 +23,13 @@ public class LandingPage {
   
     public WebElement closePopUp() {
         return driver.findElement(clsPopUp);       
+    }
+
+    public WebElement pageHeader() {
+        return driver.findElement(pgHdr);
+    }
+
+    public WebElement navBar() {
+        return driver.findElement(nvBr);
     }
 }

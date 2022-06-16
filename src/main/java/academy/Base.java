@@ -11,17 +11,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Base {
     public WebDriver driver;
+    public Properties props;
     public WebDriver initializeDriver() throws IOException {
         
         //initialize property file
-        Properties props = new Properties();
+        props = new Properties();
         FileInputStream fis = new FileInputStream("/Users/andrew/dev0/JavaProjects/firstframework/src/main/java/academy/resources/data.properties");
 
         //load property file
         props.load(fis);
         //get browser value from property file
         String brwser = props.getProperty("browser");
-        System.out.println(brwser);
 
         //initialize browser driver
         //chrome
