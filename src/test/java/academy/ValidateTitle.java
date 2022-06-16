@@ -3,6 +3,8 @@ package academy;
 import java.io.IOException;
 // import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,11 +14,12 @@ import pageObjects.LandingPage;
 
 public class ValidateTitle extends Base{
 
+    public static Logger log = LogManager.getLogger(Base.class.getName());
     @BeforeTest
     public void initializeTest() throws IOException {
         driver=initializeDriver();
         String url = props.getProperty("URL");
-        System.out.println(url);
+        log.info(url);
         driver.get(url);
     }
     
@@ -33,6 +36,7 @@ public class ValidateTitle extends Base{
         // add try-catch
         // lp.closePopUp().click();
         Assert.assertEquals(lp.pageHeader().getText(), "FEATURED COURSES");
+        log.info("Title shown "+lp.pageHeader().getText());
     }
     @AfterTest
     public void teardown(){

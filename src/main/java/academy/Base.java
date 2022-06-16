@@ -16,7 +16,7 @@ public class Base {
         
         //initialize property file
         props = new Properties();
-        FileInputStream fis = new FileInputStream("/Users/andrew/dev0/JavaProjects/firstframework/src/main/java/academy/resources/data.properties");
+        FileInputStream fis = new FileInputStream("/Users/andrew/dev0/JavaProjects/firstframework/src/main/java/resources/data.properties");
 
         //load property file
         props.load(fis);
